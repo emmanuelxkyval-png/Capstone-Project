@@ -9,19 +9,19 @@ const startServer = async () => {
   try {
     // Connect to database first
     await connectDB();
-    console.log('✅ Database connected successfully\n');
+    console.log('Database connected successfully\n');
 
     // Start server after successful database connection
     const server = app.listen(PORT, () => {
-      console.log(`🚀 Server is running on port ${PORT}`);
-      console.log(`📍 Environment: ${process.env.NODE_ENV || 'development'}`);
-      console.log(`🔗 API: http://localhost:${PORT}/api/${process.env.API_VERSION || 'v1'}`);
-      console.log(`💚 CASHTRACK Backend is ready!\n`);
+      console.log(`Server is running on port ${PORT}`);
+      console.log(`Environment: ${process.env.NODE_ENV || 'development'}`);
+      console.log(`API: http://localhost:${PORT}/api/${process.env.API_VERSION || 'v1'}`);
+      console.log(`CASHTRACK Backend is ready!\n`);
     });
 
     return server;
   } catch (error) {
-    console.error('❌ Failed to start server:', error.message);
+    console.error('Failed to start server:', error.message);
     process.exit(1);
   }
 };
@@ -35,7 +35,7 @@ serverPromise.then(s => server = s);
 
 // Handle unhandled promise rejections
 process.on('unhandledRejection', (err) => {
-  console.error('❌ Unhandled Rejection:', err.message);
+  console.error('Unhandled Rejection:', err.message);
   if (server) {
     server.close(() => process.exit(1));
   } else {
@@ -45,10 +45,10 @@ process.on('unhandledRejection', (err) => {
 
 // Handle SIGTERM
 process.on('SIGTERM', () => {
-  console.log('👋 SIGTERM received. Shutting down gracefully...');
+  console.log('SIGTERM received. Shutting down gracefully...');
   if (server) {
     server.close(() => {
-      console.log('✅ Process terminated');
+      console.log('Process terminated');
       process.exit(0);
     });
   } else {
