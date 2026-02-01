@@ -1,20 +1,29 @@
 {
   "name": "capstone-project-finale",
   "version": "1.0.0",
-  "description": "",
-  "main": "app.js",
+  "description": "CashTrack Backend API - Business cash flow tracking system",
+  "main": "cashtrack-backend/src/server.js",
+  "engines": {
+    "node": ">=18.0.0",
+    "npm": ">=9.0.0"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node cashtrack-backend/src/server.js",
     "dev": "nodemon cashtrack-backend/src/server.js"
   },
-  "keywords": [],
+  "keywords": [
+    "cashtrack",
+    "expense-tracker",
+    "business-finance"
+  ],
   "author": "",
   "license": "ISC",
   "dependencies": {
     "bcrypt": "^6.0.0",
     "compression": "^1.8.1",
     "cors": "^2.8.6",
+    "dotenv": "^17.2.3",
     "express": "^5.2.1",
     "express-rate-limit": "^8.2.1",
     "helmet": "^8.1.0",
@@ -24,7 +33,6 @@
     "morgan": "^1.10.1"
   },
   "devDependencies": {
-    "dotenv": "^17.2.3",
     "nodemon": "^3.1.11"
   }
 }
